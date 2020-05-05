@@ -13,7 +13,7 @@ public class Pais {
     
     private String nome;
     private String sigla;
-    private String codpais;
+    private int codpais;
 
     /**
      * @return the nome
@@ -46,14 +46,14 @@ public class Pais {
     /**
      * @return the codpais
      */
-    public String getCodpais() {
+    public int getCodpais() {
         return codpais;
     }
 
     /**
      * @param codpais the codpais to set
      */
-    public void setCodpais(String codpais) {
+    public void setCodpais(int codpais) {
         this.codpais = codpais;
     }
     

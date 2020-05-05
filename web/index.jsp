@@ -15,6 +15,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <a href="pais/cadpais.jsp">Cadastrar pais</a>
+        <a href="pais/cadpais.jsp">Cadastrar pais</a> <br>
+        <a href="pais/listarpais.jsp">Listar pais</a>
     </body>
 </html>
