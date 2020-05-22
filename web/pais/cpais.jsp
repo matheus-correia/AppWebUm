@@ -1,7 +1,7 @@
 <%-- 
     Document   : cpais
-    Created on : 04/05/2020, 21:04:36
-    Author     : hugom
+    Created on : 04/05/2020, 21:04:35
+    Author     : Rodney
 --%>
 
 <%@page import="DAO.DAOPais"%>
@@ -15,13 +15,15 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <%
-        Pais objP = new Pais();
-        objP.setNome(request.getParameter("nome"));
-        objP.setSigla(request.getParameter("sigla"));
-        DAOPais objDp = new DAOPais();
-        objDp.CadastrarPais(objP);
-        response.sendRedirect("cadpais.jsp");
-        %>
+    <%    
+      Pais objP = new Pais();
+      objP.setNome(request.getParameter("nome"));
+      objP.setSigla(request.getParameter("sigla"));
+      DAOPais objDp = new DAOPais();
+      objDp.CadastrarPais(objP);
+      response.sendRedirect("cadpais.jsp");
+    %>    
+        
+        
     </body>
 </html>

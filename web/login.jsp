@@ -1,6 +1,6 @@
 <%-- 
-    Document   : cadpais
-    Created on : 04/05/2020, 20:54:59
+    Document   : login
+    Created on : 11/05/2020, 22:38:41
     Author     : Rodney
 --%>
 
@@ -12,15 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <form name="f" method="POST" action="cpais.jsp">      
+        <h1>Login</h1>
         <p>
-            Nome:<input type="text" name="nome" />  <br>          
-            Sigla: <input type="text" name="sigla" /> <br>
+        <form name="f" method="POST" action="alogin.jsp">
+            Login: <input type="text" name="login" /> <br>
+            Senha: <input type="text" name="senha" /> <br>
             <input type="submit" value="Enviar" />
-        </p>    
         </form>
-        
-        
+        </p>
     </body>
 </html>

@@ -18,52 +18,56 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author hugom
+ * @author Rodney
  */
 public class DAOPais {
-    
+  
     Connection con;
     
+   
     public void CadastrarPais(Pais p)
     {
-       String sql = "insert into pais(nome, sigla) values (?,?)";
-       con = ConectaBanco.Metodoconexao();
+     String sql = "insert into pais(nome,sigla) values (?,?)";
+     con = ConectaBanco.MetodoConexao();
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, p.getNome());
-            ps.setString(2, p.getSigla());
-            ps.execute();
-            con.close();
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, p.getNome());
+        ps.setString(2, p.getSigla());
+        ps.execute();        
+        con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DAOPais.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
+    
+    
     
     public List<Pais> ListarPais()
     {
-        List<Pais> objLista = new ArrayList<Pais>();
-        String sql = "select * from pais";
-        con = ConectaBanco.Metodoconexao();
-        ResultSet rs;
+      List<Pais> objLista = new ArrayList<Pais>();
+      String sql = "select * from pais";
+      con = ConectaBanco.MetodoConexao();
+      ResultSet rs;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while(rs.next())
             {
-                Pais objP = new Pais();
-                objP.setCodpais(rs.getInt("codpais"));
-                objP.setNome(rs.getString("nome"));
-                objP.setSigla(rs.getString("sigla"));
-                objLista.add(objP);
-
+               Pais objP = new Pais();
+               objP.setCodpais(rs.getInt("codpais"));
+               objP.setNome(rs.getString("nome"));
+               objP.setSigla(rs.getString("sigla"));
+               objLista.add(objP);
             }
-            con.close();
+         con.close();
         } catch (SQLException ex) {
             Logger.getLogger(DAOPais.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        return objLista;
+      
+    
+      return objLista;
     }
+    
+    
+    
 }
